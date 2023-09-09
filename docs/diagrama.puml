@@ -1,0 +1,44 @@
+Class Game
+Class Obstaculo
+Class Pajaro
+Class Fondo
+Class PantallaDeInicio
+Class Animacion
+Class Puntuacion
+Class PantallaDeGameover 
+Class Imagen 
+Class Sonido 
+Class Tuberia
+Class Edificio
+Class Posicion
+Class Coordenadas
+Class Controlador 
+Class Jugador
+Class Pantalla
+
+Game*--Pajaro
+Game*--Obstaculo
+Game*--Fondo
+Game*--PantallaDeInicio
+Game*--PantallaDeGameover
+
+Pajaro o-- Puntuacion
+Pajaro o--Animacion
+Pajaro o--Posicion
+
+Obstaculo<|-- Tuberia
+Obstaculo<|--Edificio
+Obstaculo o-- Posicion
+
+
+Posicion*--Coordenadas
+Posicion o-- PantallaDeGameover
+
+Posicion--|>Controlador
+Jugador o--Game
+
+Animacion*--Imagen
+Animacion*--Sonido
+
+PantallaDeGameover--|>Pantalla
+PantallaDeInicio--|>Pantalla
