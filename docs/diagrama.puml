@@ -1,44 +1,55 @@
-Class Game
-Class Obstaculo
-Class Pajaro
-Class Fondo
-Class PantallaDeInicio
-Class Animacion
-Class Puntuacion
-Class PantallaDeGameover 
-Class Imagen 
-Class Sonido 
-Class Tuberia
-Class Edificio
-Class Posicion
-Class Coordenadas
-Class Controlador 
-Class Jugador
-Class Pantalla
-
-Game*--Pajaro
-Game*--Obstaculo
-Game*--Fondo
-Game*--PantallaDeInicio
-Game*--PantallaDeGameover
-
-Pajaro o-- Puntuacion
-Pajaro o--Animacion
-Pajaro o--Posicion
-
-Obstaculo<|-- Tuberia
-Obstaculo<|--Edificio
-Obstaculo o-- Posicion
+Class Level
+Class Barrier
+Class Bird
+Class Background 
+Class StartScreen    
+Class Animation
+Class Score
+Class GameoverScreen 
+Class Image 
+Class Sound 
+Class Pipeline
+Class Building
+Class Postition
+Class Coordinate
+Class Controller 
+Class Player
+Class Screen    
+Class FlappyGame
+Class Skin
 
 
-Posicion*--Coordenadas
-Posicion o-- PantallaDeGameover
+FlappyGame "1"*--"*"Level
+FlappyGame"1"*--"1"Player
+Background"1"*--"*"Animation
+Player "1" o--"1" Controller
+Level "1"*--"1"Bird
+Level"1"*--"*"Barrier
+Level"1"*--"*"Background
 
-Posicion--|>Controlador
-Jugador o--Game
+Level "1" *-- "1" Score
+Level"1"*-- "2"Screen
 
-Animacion*--Imagen
-Animacion*--Sonido
+GameoverScreen--|>Screen
+StartScreen--|>Screen
 
-PantallaDeGameover--|>Pantalla
-PantallaDeInicio--|>Pantalla
+Bird "1" o-- "1" Score
+Bird "1" *-- "*"Animation
+Bird "1"*--"1" Postition
+
+Barrier<|-- Pipeline
+Barrier<|--Building
+Barrier "*"*-- "*"Image
+Barrier "1"*--"1" Postition
+
+Postition"1"*--"2"Coordinate
+
+
+Controller "1" o--"1" Bird
+
+Animation"1" *-- "*" Image
+Animation "1" *-- "*" Sound
+
+Skin--|> Image
+
+Score"1" o-- "1" GameoverScreen
