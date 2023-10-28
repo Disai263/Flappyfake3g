@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <Drawable.hpp>
 #include <Updatable.hpp>
-#include <Pipes.hpp>
 #include <list>
 
 class GameWindow
